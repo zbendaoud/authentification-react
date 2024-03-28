@@ -7,6 +7,7 @@ import * as auth from "../provider-auth";
 import FullPageSpinner from "../components/pageRendu/FullPageSpinner";
 import FullPageErrorFallback from "../components/pageRendu/FullPageErrorFallback";
 import { useAsync } from "../utils/hooks";
+import { client } from "../utils/api-client";
 // import {setQueryDataForBook} from 'utils/books'
 
 async function bootstrapAppData() {
@@ -48,11 +49,17 @@ function AuthProvider(props) {
   }, [run]);
 
   const login = React.useCallback(
-    (form) => auth.login(form).then((user) => setData(user)),
+    (form) => {
+      auth.login(form).then((user) => setData(user));
+    },
     [setData]
   );
+
   const register = React.useCallback(
-    (form) => auth.register(form).then((user) => setData(user)),
+    (form) => {
+      auth.register(form).then((user) => setData(user));
+      console.log("je suis appelé register");
+    },
     [setData]
   );
   const logout = React.useCallback(() => {

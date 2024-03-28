@@ -10,6 +10,7 @@ import UnauthenticatedApp from "./components/UnauthenticatedApp.jsx";
 
 function App() {
   const { user } = useAuth();
+  console.log({ user });
   return (
     <React.Suspense fallback={<Kader />}>
       {user ? <AuthenticatedApp /> : <UnauthenticatedApp />}

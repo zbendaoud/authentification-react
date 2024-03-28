@@ -1,14 +1,13 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/core";
-
+import React from "react";
 import { Link as RouterLink } from "react-router-dom";
-import styled from "@emotion/styled/macro";
 import { keyframes } from "@emotion/core";
-import * as colors from "styles/colors";
-import * as mq from "styles/media-queries";
+// import styled from "@emotion/styled";
+import styled from "@emotion/styled";
+
 import { Dialog as ReachDialog } from "@reach/dialog";
 import { FaSpinner } from "react-icons/fa";
-
+import * as colors from "../styles/colors.js";
+import * as mq from "../styles/media-queries.js";
 const spin = keyframes({
   "0%": { transform: "rotate(0deg)" },
   "100%": { transform: "rotate(360deg)" },

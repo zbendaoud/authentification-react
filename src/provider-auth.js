@@ -10,9 +10,11 @@ async function getToken() {
   return window.localStorage.getItem(localStorageKey);
 }
 
-function handleUserResponse({ user }) {
-  window.localStorage.setItem(localStorageKey, user.token);
-  return user;
+function handleUserResponse(response) {
+  //il faut mettre console.log de response pour faire la déstructuration
+  window.localStorage.setItem(localStorageKey, response.token);
+
+  return response;
 }
 
 function login({ username, password }) {
@@ -43,6 +45,7 @@ async function client(endpoint, data) {
     .then(async (response) => {
       const data = await response.json();
       if (response.ok) {
+        console.log("je suis une bonne reponse de l'api");
         return data;
       } else {
         return Promise.reject(data);
