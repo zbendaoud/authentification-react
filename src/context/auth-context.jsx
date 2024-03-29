@@ -14,15 +14,18 @@ async function bootstrapAppData() {
   let user = null;
 
   const token = await auth.getToken();
+  console.log({ token });
   if (token) {
-    const data = await client("bootstrap", { token });
-    queryCache.setQueryData("list-items", data.listItems, {
-      staleTime: 5000,
-    });
+    // const data = await client("bootstrap", { token });
+    // let queryCache = new QueryCache();
+    // queryCache.setQueryData("list-items", data.listItems, {
+    //   staleTime: 5000,
+    // });
     // for (const listItem of data.listItems) {
     //   setQueryDataForBook(listItem.book)
     // }
-    user = data.user;
+    // user = data.user;
+    user = token;
   }
   return user;
 }
@@ -99,6 +102,7 @@ function useAuth() {
 
 function useClient() {
   const { user } = useAuth();
+  console.log({ user });
   const token = user?.token;
   return React.useCallback(
     (endpoint, config) => client(endpoint, { ...config, token }),

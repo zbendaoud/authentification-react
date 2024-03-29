@@ -10,8 +10,11 @@ function sendProfileQueue() {
     return Promise.resolve({ success: true });
   }
   const queueToSend = [...queue];
+  console.log({ queueToSend });
   queue = [];
-  return client("profile", { data: queueToSend });
+  // const returnedApiValue = client("profile", { data: queueToSend });
+  // console.log({ returnedApiValue });
+  return queueToSend;
 }
 
 // By wrapping the Profile like this, we can set the onRender to whatever

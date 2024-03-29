@@ -45,7 +45,6 @@ async function client(endpoint, data) {
     .then(async (response) => {
       const data = await response.json();
       if (response.ok) {
-        console.log("je suis une bonne reponse de l'api");
         return data;
       } else {
         return Promise.reject(data);
