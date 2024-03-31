@@ -9,8 +9,8 @@ import AuthenticatedApp from "./components/AuthenticatedApp.jsx";
 import UnauthenticatedApp from "./components/UnauthenticatedApp.jsx";
 
 function App() {
+  // on teste si le user exciste on retourne la plaitor de l'authentification (route et contexte et tous ce qui va avec )
   const { user } = useAuth();
-  console.log({ user });
   return (
     <React.Suspense fallback={<Kader />}>
       {user ? <AuthenticatedApp /> : <UnauthenticatedApp />}

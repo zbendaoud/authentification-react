@@ -1,6 +1,6 @@
 import { QueryCache } from "@tanstack/react-query";
 import * as auth from "../provider-auth";
-const apiURL = "https://reqres.in/api";
+// const apiURL = "https://reqres.in/api";
 
 async function client(
   endpoint,
@@ -18,7 +18,7 @@ async function client(
   };
   const queryCache = new QueryCache();
   return window
-    .fetch(`${apiURL}/${endpoint}`, config)
+    .fetch(`${import.meta.env.VITE_REACT_API_URL}/${endpoint}`, config)
     .then(async (response) => {
       if (response.status === 401) {
         queryCache.clear();

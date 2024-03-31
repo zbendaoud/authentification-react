@@ -75,6 +75,9 @@ function UnauthenticatedApp() {
       }}
     >
       <h1>Bookshelf</h1>
+      <pre>
+        <code>{JSON.stringify(import.meta.env)}</code>
+      </pre>
       <div
         css={{
           display: "grid",
