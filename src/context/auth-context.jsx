@@ -1,30 +1,18 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { QueryCache } from "@tanstack/react-query";
 
 import * as auth from "../provider-auth";
-// import { client } from "utils/api-client";
-// import { useAsync } from "utils/hooks";
+
 import FullPageSpinner from "../components/pageRendu/FullPageSpinner";
 import FullPageErrorFallback from "../components/pageRendu/FullPageErrorFallback";
 import { useAsync } from "../utils/hooks";
 import { client } from "../utils/api-client";
-// import {setQueryDataForBook} from 'utils/books'
 
 async function bootstrapAppData() {
   let user = null;
 
   const token = await auth.getToken();
-  console.log({ token });
   if (token) {
-    // const data = await client("bootstrap", { token });
-    // let queryCache = new QueryCache();
-    // queryCache.setQueryData("list-items", data.listItems, {
-    //   staleTime: 5000,
-    // });
-    // for (const listItem of data.listItems) {
-    //   setQueryDataForBook(listItem.book)
-    // }
-    // user = data.user;
     user = token;
   }
   return user;
@@ -110,4 +98,4 @@ function useClient() {
   );
 }
 
-export { AuthProvider, useAuth, useClient };
+export { AuthProvider, useAuth, useClient, bootstrapAppData };

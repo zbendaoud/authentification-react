@@ -1,11 +1,17 @@
 import React from "react";
 import { useAuth } from "../context/auth-context";
-import { Route, Routes } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 // import { NotFoundScreen } from "../pages/NotFoundScreen.jsx";
 import List from "../pages/List.jsx";
 import { NotFoundScreen } from "../pages/NotFoundScreen.jsx";
 import FinishedScreen from "../pages/FinishedScreen.jsx";
-
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from "@tanstack/react-query";
 function AppRoutes() {
   return (
     <Routes>
@@ -20,7 +26,7 @@ function AppRoutes() {
 
 export default function AuthenticatedApp() {
   const { user, logout } = useAuth();
-
+  const queryClient = new QueryClient();
   return (
     <div>
       <nav>
@@ -31,8 +37,12 @@ export default function AuthenticatedApp() {
         >
           Logout
         </button>
+        <Link to="/"> Home </Link>
+        <Link to="/finished"> Finished </Link>
       </nav>
-      <AppRoutes />
+      <QueryClientProvider client={queryClient}>
+        <AppRoutes />
+      </QueryClientProvider>
     </div>
   );
 }

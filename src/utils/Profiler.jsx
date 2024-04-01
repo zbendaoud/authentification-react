@@ -1,5 +1,4 @@
 import React from "react";
-import { client } from "./api-client";
 
 let queue = [];
 
@@ -10,10 +9,8 @@ function sendProfileQueue() {
     return Promise.resolve({ success: true });
   }
   const queueToSend = [...queue];
-  console.log({ queueToSend });
   queue = [];
-  // const returnedApiValue = client("profile", { data: queueToSend });
-  // console.log({ returnedApiValue });
+
   return queueToSend;
 }
 

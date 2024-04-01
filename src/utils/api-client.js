@@ -1,6 +1,5 @@
 import { QueryCache } from "@tanstack/react-query";
 import * as auth from "../provider-auth";
-// const apiURL = "https://reqres.in/api";
 
 async function client(
   endpoint,
