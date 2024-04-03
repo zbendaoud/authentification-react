@@ -18,7 +18,6 @@ export default function FinishedScreen() {
   // We can assume by this point that `isSuccess === true`
   return (
     <ul>
-      <li>koko</li>
       <pre>
         <code>{JSON.stringify(data)}</code>
       </pre>
