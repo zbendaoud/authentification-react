@@ -55,7 +55,6 @@ async function PUT(endpoint, options) {
 async function DELETE(endpoint, options) {
   return fetchWithToken(endpoint, "DELETE", options);
 }
-
-// Ajoutez d'autres méthodes HTTP selon vos besoins
+// pour utiliser faire import * as api from mon fichier apres faire =>  api.get("lien") apres on peut ajouter des options ou config (NB: cette api est utiliser pour des routes ou le token est obligatoire)
 
 export { GET, POST, PUT, DELETE };

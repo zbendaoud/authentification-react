@@ -1,12 +1,12 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { QueryCache } from "@tanstack/react-query";
 
 import * as auth from "../provider-auth";
 
-import FullPageSpinner from "../components/pageRendu/FullPageSpinner";
 import FullPageErrorFallback from "../components/pageRendu/FullPageErrorFallback";
 import { useAsync } from "../utils/hooks";
 import { client } from "../utils/api-client";
+import Spiner from "../components/pageRendu/Spiner";
 
 async function bootstrapAppData() {
   let user = null;
@@ -49,7 +49,6 @@ function AuthProvider(props) {
   const register = React.useCallback(
     (form) => {
       auth.register(form).then((user) => setData(user));
-      console.log("je suis appelé register");
     },
     [setData]
   );
@@ -70,7 +69,7 @@ function AuthProvider(props) {
   }
 
   if (isLoading || isIdle) {
-    return <FullPageSpinner />;
+    return <Spiner />;
   }
 
   if (isSuccess) {

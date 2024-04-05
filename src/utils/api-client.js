@@ -34,5 +34,5 @@ async function client(
       }
     });
 }
-
+// ses une api en mode déconecter pour l'utiliser faire client() ..... si on pose des data en body c'est en post sinon ses en get il faut bien la comprendre je l'ai utiliser pour l'authentification vous pouvez toujours la changer pour permetre l'utilisation de put ou delite mais je ne crois pas qu'il soit nessaisaire de la modifier
 export { client };

@@ -1,24 +1,15 @@
 import React from "react";
-import { useAuth } from "../context/auth-context";
 import { Link, Route, Routes } from "react-router-dom";
-// import { NotFoundScreen } from "../pages/NotFoundScreen.jsx";
 import List from "../pages/List.jsx";
 import { NotFoundScreen } from "../pages/NotFoundScreen.jsx";
 import FinishedScreen from "../pages/FinishedScreen.jsx";
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useAuth } from "../context/auth-context.jsx";
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<List />} />
       <Route path="/finished" element={<FinishedScreen />} />
-      {/*  <Route path="/discover" element={<DiscoverBooksScreen />} />
-      <Route path="/book/:bookId" element={<BookScreen />} /> */}
       <Route path="*" element={<NotFoundScreen />} />
     </Routes>
   );
