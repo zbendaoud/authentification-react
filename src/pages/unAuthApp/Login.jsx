@@ -2,7 +2,9 @@ import React from 'react';
 import { useAsync } from '../../utils/hooks';
 import { useAuth } from '../../context/auth-context.jsx';
 import CardShadow from '../../components/CardShadow.jsx';
-
+import backgroundImage from '../../../src/assets/house.jpg';
+import CardLogin from '../../components/CardLogin.jsx';
+import { useDebouncedValue } from '../../Hook/useDebouncedValue.jsx';
 export default function Login() {
   const { isLoading, isError, error, run } = useAsync();
   const { login } = useAuth();
@@ -18,6 +20,10 @@ export default function Login() {
         password: password.value
       })
     );
+    // const [value, setValue] = useState('');
+    // const debouncedSearchTerm = useDebouncedValue(value, 500);
+
+    useEffect(() => {}, [debouncedSearchTerm]);
   }
   if (isLoading)
     return (
@@ -33,43 +39,12 @@ export default function Login() {
       </>
     );
   return (
-    <div className="bg-slate-400 w-full h-screen ">
-      <>
-        <CardShadow customClass="w-1/3 h-svh p-4 m-4">
-          <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <label className="block mb-1" htmlFor="username">
-                userName
-              </label>
-              <input
-                id="username"
-                name="username"
-                type="text"
-                defaultValue="eve.holt@reqres.in"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-400"
-              />
-            </div>
-            <div className="mb-4">
-              <label className="block mb-1" htmlFor="password">
-                password
-              </label>
-              <input
-                id="password"
-                name="password"
-                type="password"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-400"
-              />
-            </div>
-            <div>
-              <button
-                type="submit"
-                className="w-full px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
-                logIn
-              </button>
-            </div>
-          </form>
-        </CardShadow>
-      </>
+    <div>
+      <CardLogin handleSubmit={handleSubmit} customClass="lg:justify-end justify-center " />
     </div>
   );
+}
+
+{
+  /* <input type="text" value={value} onChange={(e) => setValue(e.target.value)} /> */
 }
