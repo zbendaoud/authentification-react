@@ -7,6 +7,8 @@ import Footer from '../components/Footer.jsx';
 import PartFooter from '../core/Footer/PartFooter.jsx';
 import WrapperBackGround from '../components/WrapperBackGround.jsx';
 import SocialMedia from '../components/Footer/SocialMedia.jsx';
+import LocalOffice from '../components/Footer/LocalOffice.jsx';
+import CenterLocale from '../components/Footer/CenterLocale.jsx';
 
 function AppRoutes() {
   return (
@@ -34,8 +36,17 @@ function UnauthenticatedApp() {
           <PartFooter width="3/6">
             <SocialMedia />
           </PartFooter>
-          <PartFooter width="2/6">head office</PartFooter>
-          <PartFooter width="1/6">locale office</PartFooter>
+          <PartFooter width="2/6">
+            <CenterLocale />
+          </PartFooter>
+
+          {/* <div className={`flex lg:h-full h-1/3 lg:w-2/6   border`}> any</div> */}
+
+          <PartFooter width="1/6">
+            <LocalOffice />
+          </PartFooter>
+
+          {/* <div className={`flex lg:h-full h-1/3 lg:w-1/6   border`}> any</div> */}
         </div>
       </Footer>
     </WrapperBackGround>
