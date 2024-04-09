@@ -5,8 +5,10 @@ export default {
     extend: {
       colors: {
         'green-primary': '#006C52',
-      },
-    },
+        'vert-claire': '#C5E5CA',
+        'gris-claire': '#979494'
+      }
+    }
   },
   plugins: []
 };
