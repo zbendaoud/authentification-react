@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import SearchBar from '../components/Products/SearchBar';
+import Filters from '../components/Products/Filters';
+import ProductsCollection from '../components/Products/ProductsCollection';
 
 export default function List() {
   return (
-    <div>
-      List
-      <p className="text-sm ...">The quick brown fox ...</p>
-      <p className="text-base ...">The quick brown fox ...</p>
-      <p className="text-lg ...">The quick brown fox ...</p>
-      <p className="text-xl ...">The quick brown fox ...</p>
-      <p className="text-2xl ...">The quick brown fox ...</p>{' '}
+    <div className="wrapper">
+      <SearchBar />
+      <Filters />
+      <div className="mt-8">
+        <ProductsCollection />
+      </div>
     </div>
   );
 }
