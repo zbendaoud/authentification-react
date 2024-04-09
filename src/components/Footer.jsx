@@ -3,11 +3,8 @@ import React from 'react';
 export default function Footer({ children }) {
   return (
     <div
-      className="bg-white"
+      className="bg-white w-full"
       style={{
-        position: 'stiky',
-        bottom: 0,
-        width: '100%',
         height: '20%',
         border: 'solid 1px yellow'
       }}>
