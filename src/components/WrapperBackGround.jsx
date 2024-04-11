@@ -4,7 +4,7 @@ import backgroundImage from '../assets/house.jpg';
 export default function WrapperBackGround({ children }) {
   return (
     <div
-      className="h-full"
+      className="h-max lg:h-full"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundPosition: 'center',
