@@ -32,20 +32,20 @@ export default function Register() {
       </>
     );
   return (
-    <div className="h-full" style={{ border: '1px solid red', height: '1000 px' }}>
-      <CardResgister handleSubmit={handleSubmit} customClass=" justify-center " />
+    <div className="h-full ">
+      <CardResgister handleSubmit={handleSubmit} customClass=" " />
 
       {/* <form onSubmit={handleSubmit}>
-        <label>userName</label>
-        <input
-          name="username"
-          type="text"
-          defaultValue="eve.holt@reqres.in"
-        ></input>
-        <label>password</label>
-        <input name="password" type="password"></input>
-        <button type="submit">signUp</button>
-      </form> */}
+              <label>userName</label>
+              <input
+                name="username"
+                type="text"
+                defaultValue="eve.holt@reqres.in"
+              ></input>
+              <label>password</label>
+              <input name="password" type="password"></input>
+              <button type="submit">signUp</button>
+            </form> */}
     </div>
   );
 }

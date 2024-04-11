@@ -1,8 +1,6 @@
 import React from 'react';
 import { useAsync } from '../../utils/hooks';
 import { useAuth } from '../../context/auth-context.jsx';
-import CardShadow from '../../components/CardShadow.jsx';
-import backgroundImage from '../../../src/assets/house.jpg';
 import CardLogin from '../../components/CardLogin.jsx';
 import { useDebouncedValue } from '../../Hook/useDebouncedValue.jsx';
 export default function Login() {
