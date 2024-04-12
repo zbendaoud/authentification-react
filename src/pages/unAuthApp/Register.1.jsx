@@ -2,6 +2,7 @@ import React from 'react';
 import { useAsync } from '../../utils/hooks';
 import { useAuth } from '../../context/auth-context.jsx';
 import CardResgister from '../../components/CardResgister.jsx';
+import Spiner from '../../components/pageRendu/Spiner.jsx';
 
 export default function Register() {
   const { isLoading, isError, error, run } = useAsync();
@@ -21,14 +22,13 @@ export default function Register() {
   if (isLoading)
     return (
       <>
-        hey hey <div>kader</div>
+        <Spiner />
       </>
     );
   if (isError)
     return (
       <>
-        {error}
-        <div>kader</div>
+        <div> {error}</div>
       </>
     );
   return (

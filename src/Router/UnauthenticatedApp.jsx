@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes, NavLink } from 'react-router-dom';
 import RedirectToLogin from '../pages/unAuthApp/RedirectToLogin.jsx';
 import Login from '../pages/unAuthApp/Login.jsx';
 import Register from '../pages/unAuthApp/Register.1.jsx';
@@ -25,11 +25,34 @@ function UnauthenticatedApp() {
   return (
     <WrapperBackGround>
       <nav className="flex justify-center space-x-4 py-3">
-        <Link to="/login"> login </Link>
-        <Link to="/register"> register </Link>
+        <NavLink
+          to="/login"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? 'bold' : '',
+              color: isPending ? 'red' : 'blue',
+              color: !isActive ? 'black' : 'blue',
+              viewTransitionName: isTransitioning ? 'slide' : '',
+              textDecoration: isActive ? 'underline  blue' : ''
+            };
+          }}>
+          Login
+        </NavLink>
+        <NavLink
+          to="/Register"
+          style={({ isActive, isPending, isTransitioning }) => {
+            return {
+              fontWeight: isActive ? 'bold' : '',
+              color: isPending ? 'red' : 'blue',
+              color: !isActive ? 'black' : 'blue',
+              viewTransitionName: isTransitioning ? 'slide' : '',
+              textDecoration: isActive ? 'underline  blue' : ''
+            };
+          }}>
+          Register
+        </NavLink>
       </nav>
       <WrapperBody customClass="lg:h-4/5 h-max">
-        {/* en cas de manque d'espace on passe a h-max ici et sur le backgroun  */}
         <AppRoutes />
       </WrapperBody>
       <Footer>
