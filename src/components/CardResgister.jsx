@@ -1,13 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
 import { Formik, Form, useField } from 'formik';
-
 import * as Yup from 'yup';
 import CardShadow from './CardShadow';
 import MyTextInput from '../core/MyTextInput';
-import PagesTest from '../test/PagesTest';
 import MySelect from '../core/MySelect';
+import SimpleWhiteCard from '../core/Card/SimpleWhiteCard';
 
 export default function CardResgister({ handleSubmit, customClass }) {
   return (
@@ -53,16 +50,15 @@ export default function CardResgister({ handleSubmit, customClass }) {
         <Form className="h-full w-full">
           <div className={`flex justify-center items-center h-full ${customClass} `}>
             <CardShadow
-              customClass={` w-11/12  p-4 h-auto shadow-md bg-white bg-opacity-60 flex flex-col lg:flex-row lg:space-x-4 gap-3 `}>
-              {/* height="90%" */}
+              customClass={` w-11/12  p-4 h-max shadow-md bg-white bg-opacity-60 flex flex-col lg:flex-row lg:space-x-4 gap-3 `}>
               <div className=" h-full text-white p-4 lg:w-5/12">
-                <div className="bg-white text-black h-max py-4 rounded-md shadow-md px-6">
-                  <h1 className="text-xl font-semibold text-center">Business Information</h1>
+                <SimpleWhiteCard title="Business Information">
                   <MyTextInput
                     label="Customer ID"
                     name="customerId"
                     type="number"
                     placeholder="9348219"
+                    autofocus
                   />
                   <MyTextInput
                     label="Company Name"
@@ -76,14 +72,10 @@ export default function CardResgister({ handleSubmit, customClass }) {
                     type="number"
                     placeholder="1 234 432 235"
                   />
-                </div>
-                <div className=" text-black h-max mt-2 bg-white p-4 rounded-md shadow-md">
-                  <h1 className="text-xl font-semibold text-center">personelle Information</h1>
-                  {/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
+                </SimpleWhiteCard>
+                <SimpleWhiteCard title="personelle Information">
                   <MyTextInput label="First Name" name="firstName" type="text" placeholder="Jane" />
-
                   <MyTextInput label="Last Name" name="lastName" type="text" placeholder="Doe" />
-
                   <MyTextInput
                     label="Email"
                     name="email"
@@ -91,15 +83,10 @@ export default function CardResgister({ handleSubmit, customClass }) {
                     placeholder="jane@formik.com"
                   />
                   <MyTextInput label="job Title" name="jobTitle" type="text" placeholder="RH" />
-                </div>
+                </SimpleWhiteCard>{' '}
               </div>
-              {/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */}
-
               <div className=" h-full  p-4 lg:w-7/12">
-                {/* // on peut ou on dois mettre h-max */}{' '}
-                <div className="bg-white text-black h-max py-4 px-6 pb-8 ">
-                  <h1 className="text-xl font-semibold text-center">Business Address</h1>
-
+                <SimpleWhiteCard title="Business Address">
                   <MyTextInput
                     label="Adresse"
                     name="firstAdresse"
@@ -128,7 +115,6 @@ export default function CardResgister({ handleSubmit, customClass }) {
                   />
                   <div className="lg:flex lg:flex-row justify-between w-full lg:space-x-6">
                     {' '}
-                    {/* /////////////////////////////////////////////////////////////////////////////////////////////// */}
                     <MyTextInput
                       label="Province / State"
                       name="prov"
@@ -142,8 +128,6 @@ export default function CardResgister({ handleSubmit, customClass }) {
                       placeholder="H2X 1Y6"
                     />
                   </div>
-                  {/* /////////////////////////////////////////////////////////////////////////////////////////////// */}
-
                   <MySelect label="country" name="country">
                     <option value="">Select a country</option>
                     <option value="designer">Designer</option>
@@ -151,7 +135,7 @@ export default function CardResgister({ handleSubmit, customClass }) {
                     <option value="product">Product Manager</option>
                     <option value="other">Other</option>
                   </MySelect>
-                </div>{' '}
+                </SimpleWhiteCard>{' '}
                 <div className="h-max flex lg:flex-row flex-col items-center justify-center px-4 py-4 lg:py-8 lg:space-y-0 space-y-4 lg:space-x-8">
                   <h1 className="w-max font-medium text-lg">
                     {' '}
@@ -168,7 +152,6 @@ export default function CardResgister({ handleSubmit, customClass }) {
           </div>
         </Form>
       </Formik>
-      {/* <PagesTest /> */}
     </div>
   );
 }

@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function CenterLocale() {
   return (
-    <div className="py-2 px-2  w-full">
-      <div className=" bg-vert-claire  rounded-lg">
+    <div className=" w-full">
+      <div className=" bg-vert-claire ">
         <div className="hidden lg:block text-center text-xl font-bold">head office</div>
         <div class="grid grid-cols-2 text-sm lg:text-lg lg:gap-3 px-4 pb-2">
           <div>1418 Michael Street</div>

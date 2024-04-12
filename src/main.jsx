@@ -1,13 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
-import "./index.css";
-import { AppProviders } from "./context";
-import { Profiler } from "./utils/Profiler.jsx";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+import './index.css';
+import { AppProviders } from './context';
+import { Profiler } from './utils/Profiler.jsx';
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Profiler id="App Root" phases={["mount"]}>
+    <Profiler id="App Root" phases={['mount']}>
       <AppProviders>
         <App />
       </AppProviders>
