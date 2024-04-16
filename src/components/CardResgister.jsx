@@ -6,7 +6,6 @@ import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
 import CardShadow from './CardShadow';
 import MyTextInput from '../core/MyTextInput';
-import PagesTest from '../test/PagesTest';
 import MySelect from '../core/MySelect';
 
 export default function CardResgister({ handleSubmit, customClass }) {
