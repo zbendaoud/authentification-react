@@ -5,11 +5,15 @@ import { NotFoundScreen } from '../pages/NotFoundScreen.jsx';
 import FinishedScreen from '../pages/FinishedScreen.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useAuth } from '../context/auth-context.jsx';
+import Cart from '../pages/Cart.jsx';
+import Product from '@/pages/Product.jsx';
 function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<List />} />
       <Route path="/finished" element={<FinishedScreen />} />
+      <Route path="/cart" element={<Cart />} />
+      <Route path="/product/:id" element={<Product />} />
       <Route path="*" element={<NotFoundScreen />} />
     </Routes>
   );
@@ -29,7 +33,7 @@ export default function AuthenticatedApp() {
           <Link to="/finished"> Finished </Link>
         </div>
 
-        <div className="flex justify-between items-center py-2 px-8 bg-gray-100 uppercase text-sm font-semibold">
+        <div className="lg:flex justify-between items-center py-2 px-8 bg-gray-100 uppercase text-sm font-semibold hidden ">
           <Link to="/"> Products </Link>
           <Link to="/"> My Quotes </Link>
           <Link to="/"> My Orders </Link>
