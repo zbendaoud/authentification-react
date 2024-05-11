@@ -26,14 +26,14 @@ export default function Login() {
   if (isLoading)
     return (
       <>
-        hey hey <div>kader</div>
+        <div>ici le speaner</div>
       </>
     );
   if (isError)
     return (
       <>
         {error}
-        <div>kader</div>
+        <div>error</div>
       </>
     );
   return (
@@ -41,8 +41,4 @@ export default function Login() {
       <CardLogin handleSubmit={handleSubmit} customClass="lg:justify-end justify-center " />
     </div>
   );
-}
-
-{
-  /* <input type="text" value={value} onChange={(e) => setValue(e.target.value)} /> */
 }
