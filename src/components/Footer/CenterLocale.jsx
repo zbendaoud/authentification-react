@@ -8,7 +8,7 @@ export default function CenterLocale({ title }) {
     <div className=" w-full h-full">
       <div className=" bg-vert-claire h-full ">
         <div className="hidden lg:block text-center text-xl font-bold">{title}</div>
-        <div class="grid grid-cols-2 text-sm lg:text-lg lg:gap-3 px-4 ">
+        <div className="grid grid-cols-2 text-sm lg:text-lg lg:gap-3 px-4 ">
           <div>{officeValues.address}</div>
           <div className="pl-6">{officeValues.phone}</div>
           <div>{officeValues.city}</div>
