@@ -32,7 +32,7 @@ export default function Register() {
       </>
     );
   return (
-    <div className="h-full" style={{ border: '1px solid red', height: '1000 px' }}>
+    <div className="h-full">
       <CardResgister handleSubmit={handleSubmit} customClass=" justify-center " />
 
       {/* <form onSubmit={handleSubmit}>
