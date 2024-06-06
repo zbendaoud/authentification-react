@@ -21,14 +21,14 @@ export default function Register() {
   if (isLoading)
     return (
       <>
-        hey hey <div>kader</div>
+        loading ...... <div> ........loading</div>
       </>
     );
   if (isError)
     return (
       <>
         {error}
-        <div>kader</div>
+        <div>{error}</div>
       </>
     );
   return (
