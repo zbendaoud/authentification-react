@@ -23,7 +23,16 @@ function login({ email, password }) {
 function register({ email, password }) {
   return client('register', { email, password }).then(handleUserResponse);
 }
-
+// const getCustomerId = async (data) => {
+//   try {
+//     const response = await client('check-account', { data });
+//     console.log({ youcef: response });
+//     return response;
+//   } catch (error) {
+//     console.error('Error fetching customer ID:', error);
+//     throw error;
+//   }
+// };
 async function logout() {
   window.localStorage.removeItem(localStorageKey);
 }
